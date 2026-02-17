@@ -18,11 +18,11 @@ It supports:
 ![Screenshot](Screenshot/screenshot1.png)
 
 ---
-
+  
 ## 🚀 Live Demo
 
-Click here to use the app:  
-https://Itzz-Ryut.github.io/To-Do/
+[Open Todo App](https://itzz-ryut.github.io/To-Do/)
+
 
 ---
 
