@@ -1,0 +1,207 @@
+:root {
+  --body-bg: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  --box-bg: rgba(235, 235, 235, 0.53);
+  --box-shadow: rgba(0, 0, 0, 0.35) 13px 18px 16px 5px;
+  --title-bg: linear-gradient(180deg, rgba(131, 58, 180, 1) 5%, rgba(207, 103, 103, 1) 65%, rgba(252, 176, 69, 1) 100%);
+  --shadow-btn: 0px 0px 6px 5px rgb(203 144 180 / 37%);
+  --li-bg: rgb(225 225 225 / 72%);
+  --shadow-li: 0px 0px 6px 5px rgb(144 203 192 / 52%);
+}
+
+.dark-theme {
+  --body-bg: radial-gradient( circle farthest-corner at 50.3% 47.3%, rgba(113,42,92,1) 0.1%, rgba(40,25,46,1) 90% );
+  --box-bg: rgb(24 24 24 / 53%);
+  --box-shadow: rgb(221 217 217 / 34%) 13px 18px 16px 5px;
+  --title-bg: linear-gradient(180deg, rgba(142, 197, 252, 1.000) 0.000%, rgba(161, 216, 255, 1.000) 50.000%, rgba(224, 195, 255, 1.000) 100.000%);
+  --shadow-btn: 0px 0px 6px 4px rgb(115 205 175 / 69%);
+  --li-bg: rgb(129 129 129 / 44%);
+  --shadow-li: 0px 0px 6px 5px rgb(195 116 182 / 82%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-image: var(--body-bg);
+}
+
+#box {
+  display: flex;
+  flex-direction: column;
+  width: 22rem;
+  min-height: 12rem;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 5rem 0 0;
+  position: relative;
+  border-radius: 22px 12px;
+  box-shadow: var(--box-shadow);
+  border: 1px solid rgba(227, 174, 205, 0.6196078431);
+  background: var(--box-bg);
+}
+#box h2 {
+  background: var(--title-bg);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+#box #inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+#box #input {
+  border-radius: 25px;
+  width: 15rem;
+  height: 1.2rem;
+  border: none;
+  padding: 10px;
+  box-shadow: var(--shadow-btn);
+  outline: none;
+}
+#box #add {
+  box-shadow: var(--shadow-btn);
+  border-radius: 50%;
+  outline: none;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: none;
+}
+#box #add:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
+}
+#box #add:active {
+  transform: scale(0.9);
+  transition: transform 0.2s ease;
+}
+#box #lists {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0;
+}
+#box li {
+  list-style-type: none;
+  width: 14REM;
+  display: grid;
+  grid-template-columns: 8rem 2rem 2rem;
+  align-items: center;
+  background: var(--li-bg);
+  gap: 1rem;
+  padding: 6px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-li);
+}
+#box li .todo-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#box li .cmplt {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  height: 1.2rem;
+  width: 1.2REM;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #999;
+  transition: background-color 0.3s ease;
+}
+#box li .cmplt:checked {
+  background-color: #63cd63;
+  border-color: #52e952;
+}
+#box li .delete {
+  outline: none;
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  color: red;
+  font-size: larger;
+  transition: transform 0.2s ease;
+}
+#box li .delete:hover {
+  transform: scale(1.2);
+}
+#box .theme-checkbox {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+}
+#box .theme-checkbox {
+  --toggle-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 2.25em;
+  height: 1.125em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  transition: 0.4s;
+  border-radius: 99em;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+#box .theme-checkbox::before {
+  content: "";
+  width: 0.75em;
+  height: 0.75em;
+  position: absolute;
+  top: 0.2em;
+  left: 0.438em;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+#box .theme-checkbox:checked::before {
+  left: calc(100% - 0.75em - 0.438em);
+  background-position: 0;
+}
+#box .theme-checkbox:checked {
+  background-position: 100%;
+}
+#box #buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin: 0 0 0.5rem;
+}
+#box #buttons button {
+  border: none;
+  outline: none;
+  width: 3.5rem;
+  padding: 0.4rem;
+  border-radius: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  box-shadow: var(--shadow-btn);
+  transition: transform 0.2s ease-in-out;
+}
+#box #buttons button:hover {
+  transform: scale(1.1);
+}
+#box #buttons button:active {
+  transform: scale(1);
+}
+#box #buttons button:focus {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}/*# sourceMappingURL=to-do.css.map */
