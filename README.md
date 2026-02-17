@@ -22,7 +22,7 @@ It supports:
 ## 🚀 Live Demo
 
 Click here to use the app:  
-https://itzz-ryut.github.io/todo-app/
+https://Itzz-Ryut.github.io/todo-app/
 
 ---
 
